@@ -1,0 +1,75 @@
+DGCuadres/POS - IA LOCAL Y COMPILACION
+=======================================
+
+1) EJECUTAR EL PROGRAMA
+------------------------
+En Windows con Python instalado:
+    ejecutar.bat
+
+2) SERVIDOR IA
+--------------
+La aplicación se conecta a un servicio compatible con OpenAI ya iniciado; no descarga modelos ni inicia o detiene ese servicio.
+
+Por defecto usa:
+    http://127.0.0.1:8081
+
+Configure también la API key si el servicio la exige. Se envía como:
+    Authorization: Bearer <API key>
+
+En el programa:
+    Configuración > Inteligencia Artificial Local
+
+Puede cambiar la URL, por ejemplo:
+    http://127.0.0.1:8081
+    http://192.168.1.50:8081
+
+Puede dejar Modelo vacío para detectar automáticamente el primer modelo de /v1/models.
+
+3) FUNCIONES DE LA IA
+---------------------
+La IA puede consultar y analizar:
+- puntos de venta
+- trabajadores
+- productos
+- turno actual
+- turnos históricos
+- ventas
+- gastos
+- efectivo y diferencias
+- balances
+- productos más vendidos
+- evolución diaria
+- resumen e historial de trabajadores
+
+También puede solicitar operaciones:
+- crear/modificar/desactivar productos
+- crear/renombrar/activar/desactivar puntos
+- crear trabajadores
+- abrir turnos
+- modificar conteos
+- agregar/eliminar gastos
+- guardar conteo de efectivo
+- cerrar/reabrir turnos
+- recalcular turnos cerrados
+
+Las operaciones que escriben datos siempre piden confirmación.
+La IA nunca recibe acceso SQL directo.
+
+4) COMPILAR A EXE
+-----------------
+Ejecute:
+    compilar.bat
+
+El script instala las dependencias de compilación, convierte dg.png en dg.ico y ejecuta PyInstaller.
+El EXE queda en:
+    dist\DG POS v1.exe
+
+El icono de las ventanas y del EXE usa dg.png.
+
+IMPORTANTE: la compilación del EXE de Windows debe hacerse en Windows. El ZIP incluye el compilador/automatizador (compilar.bat + spec + preparar_compilacion.py), pero no un binario EXE precompilado desde Linux.
+
+5) DATOS
+---------
+La base de datos existente dgcuadres_pos.db se conserva.
+La configuración se conserva y se amplía automáticamente con las opciones IA y Web.
+No se eliminan tablas ni se sustituye la lógica de Database.

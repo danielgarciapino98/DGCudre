@@ -1,0 +1,21 @@
+# --- Requeridas para los informes en PDF y gráficos ---
+reportlab>=4.0
+matplotlib>=3.8
+
+# --- Servidor web integrado (acceso opcional desde PC o móvil) ---
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+
+# --- Impresión en Windows a una impresora instalada del sistema (modo "sistema") ---
+# Solo es necesario en Windows. En Linux/Mac se usa CUPS (lp/lpstat), ya incluido en el SO.
+pywin32>=306 ; sys_platform == "win32"
+
+# --- Opcional: impresión ESC/POS directa por USB o red (modos "usb"/"red") ---
+python-escpos>=3.0
+pyusb>=1.2
+
+# --- Compilación opcional a EXE ---
+pyinstaller>=6.0
+Pillow>=10.0
+cryptography>=43.0

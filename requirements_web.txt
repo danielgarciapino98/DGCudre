@@ -1,0 +1,9 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+reportlab>=4.0
+matplotlib>=3.8
+pywin32>=306 ; sys_platform == "win32"
+python-escpos>=3.0
+pyusb>=1.2
+cryptography>=43.0
